@@ -25,6 +25,5 @@ def mic():
     return text 
     
 
-while True:
-    mic()
+
 

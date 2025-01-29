@@ -13,7 +13,7 @@ options = [
         "Option B: change the enviornment",
         "Option C: get emergeny services online"
     ]
-def ask_claude_to_decide(options, criteria):
+def ask_claude_to_decide(criteria):
     """
     Ask Claude to decide between options based on given criteria.
     
