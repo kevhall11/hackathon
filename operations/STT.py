@@ -4,9 +4,8 @@ import speech_recognition as sr
 recognizer = sr.Recognizer()
 #run for imput to gpt 
 
-
+#when running it will use the microphone to turn speech into text
 def mic():
-    """Function to listen to the microphone and recognize speech."""
     with sr.Microphone() as source:
 
         # Adjust for ambient noise and record the audio

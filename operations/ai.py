@@ -15,11 +15,11 @@ options = [
     ]
 def ask_claude_to_decide(criteria):
     """
-    Ask Claude to decide between options based on given criteria.
+    Ask Claude to decide between options based on options and criteria.
     
-    :param options: List of options to choose from.
-    :param criteria: Criteria to evaluate the options.
-    :return: Claude's decision and reasoning.
+    param options: List of options to choose from.
+    param criteria: Criteria to evaluate the options.
+    return: Claude's decision and reasoning.
     """
     # Construct the prompt
     prompt = f"""You are an intelligent Robot that can move around ones home and Answer questions and help with automation tasks:
@@ -50,8 +50,9 @@ def ask_claude_to_decide(criteria):
     #return Claude's response
     return response.content[0].text
 
-
+#seperrates the prompt with a given number and response from claude
 def seperate_content(prompt, response):
+    
     checker = False
     index1 = 0
     index2 = 0
@@ -60,9 +61,11 @@ def seperate_content(prompt, response):
         if(checker):
             if(char == '\n'):
                 index2 = ind
+                break
         if(char == prompt):
             checker = True
             index1 = ind
+        ind = ind + 1
 
     return response.substring(index1, index2)
                 
