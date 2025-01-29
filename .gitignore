@@ -1,4 +1,5 @@
 .env
 
 operations/_pycache_
+/venv
 
