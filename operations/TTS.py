@@ -1,6 +1,10 @@
+#text to speech to give to the model
+
 import speech_recognition as sr
 recognizer = sr.Recognizer()
 #run for imput to gpt 
+
+
 def mic():
     """Function to listen to the microphone and recognize speech."""
     with sr.Microphone() as source:
@@ -10,7 +14,6 @@ def mic():
         audio = recognizer.listen(source)
 
         try:
-            # Use Google Web Speech API to recognize the audio
             text = recognizer.recognize_google(audio)
 
         except sr.UnknownValueError:
@@ -19,7 +22,7 @@ def mic():
             text = None
 
 
-    return text  # Continue listening
+    return text 
     
 
 while True:
