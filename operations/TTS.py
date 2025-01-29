@@ -1,29 +1,15 @@
-#text to speech to give to the model
+#will take in text and convert it into audio 
 
-import speech_recognition as sr
-recognizer = sr.Recognizer()
-#run for imput to gpt 
+import pyttsx3
 
+def text_to_speech(text, rate=150, voice=None):
 
-def mic():
-    """Function to listen to the microphone and recognize speech."""
-    with sr.Microphone() as source:
-
-        # Adjust for ambient noise and record the audio
-        recognizer.adjust_for_ambient_noise(source)
-        audio = recognizer.listen(source)
-
-        try:
-            text = recognizer.recognize_google(audio)
-
-        except sr.UnknownValueError:
-            text = None 
-        except sr.RequestError as e:
-            text = None
-
-
-    return text 
+    engine = pyttsx3.init()
+    engine.setProperty('rate', rate)
     
-
-
-
+    if voice:
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[voice].id)
+    
+    engine.say(text)
+    engine.runAndWait()

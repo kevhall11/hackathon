@@ -1,9 +1,11 @@
-from operations import ai, TTS
+from operations import ai, STT,TTS
 
 def main():
-    input = TTS.mic()
+    input = STT.mic()
     response = ai.ask_claude_to_decide(input)
-    print (response)
+
+    
+    TTS.text_to_speech(text=response)
 
 
 if __name__ == "__main__":
