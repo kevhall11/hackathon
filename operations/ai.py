@@ -51,4 +51,18 @@ def ask_claude_to_decide(criteria):
     return response.content[0].text
 
 
+def seperate_content(prompt, response):
+    checker = False
+    index1 = 0
+    index2 = 0
+    ind = 0
+    for char in response:
+        if(checker):
+            if(char == '\n'):
+                index2 = ind
+        if(char == prompt):
+            checker = True
+            index1 = ind
 
+    return response.substring(index1, index2)
+                
