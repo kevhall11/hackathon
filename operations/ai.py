@@ -68,4 +68,8 @@ def seperate_content(prompt, response):
         ind = ind + 1
 
     return response.substring(index1, index2)
-                
+
+
+##
+    def pullOption(str:response):
+        ind = response.find("")
