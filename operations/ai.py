@@ -13,17 +13,13 @@ options = [
         "Option B: turn left",
         "Option C: go foward ",
         "Option D: go backwards",
+        "Option E: speed up", 
+        "Option F: slow down",
         "Option E: none of the above"
 
     ]
 def ask_claude_to_decide(criteria):
-    """
-    Ask Claude to decide between options based on options and criteria.
-    
-    param options: List of options to choose from.
-    param criteria: Criteria to evaluate the options.
-    return: Claude's decision and reasoning.
-    """
+
     # Construct the prompt
     prompt = f"""You are a robot that is traveling based off user input. choose the option in which the robot should move
     
