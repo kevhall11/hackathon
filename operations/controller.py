@@ -9,9 +9,9 @@ class Controller:
         self.ard = talker
         self.mode = mode
 
-    dawson = Agent(name = "Cody Dawson")
+    Recs = Agent(name = "Recs")
 
-    @dawson.on_interval(period = 1.0)
+    @Recs.on_interval(period = 1.0)
     async def update(self):
         recieve = arduino.ArduinoCommunicator.recieve_JSON(self.ard)
         if(self.mode == 'A'):
