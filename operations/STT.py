@@ -20,9 +20,9 @@ def mic():
         except sr.RequestError as e:
             text = None
 
-
-    return text 
     
+    return text 
 
+    
 
 

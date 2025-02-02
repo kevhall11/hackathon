@@ -100,29 +100,3 @@ class ArduinoCommunicator:
         """Clear any pending output data."""
         if self.serial_connection and self.serial_connection.is_open:
             self.serial_connection.reset_output_buffer()
-
-# Example usage:
-if __name__ == "__main__":
-    # Create Arduino communicator instance
-    arduino = ArduinoCommunicator(port='COM3')  # Adjust port as needed
-    
-    # Connect to Arduino
-    if arduino.connect():
-        try:
-            # Example: Send JSON data
-            data_to_send = {
-                "command": "LED_CONTROL",
-                "state": "ON",
-                "brightness": 255
-            }
-            if arduino.send_json(data_to_send):
-                print("Data sent successfully")
-            
-            # Example: Receive JSON data
-            received_data = arduino.receive_json()
-            if received_data:
-                print(f"Received data: {received_data}")
-                
-        finally:
-            # Always disconnect properly
-            arduino.disconnect()

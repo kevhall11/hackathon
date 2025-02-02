@@ -9,9 +9,12 @@ client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
 #Options that are viable for the AI 
 options = [
-        "Option A: Give a good comeback",
-        "Option B: change the enviornment",
-        "Option C: get emergeny services online"
+        "Option A: Turn right",
+        "Option B: turn left",
+        "Option C: go foward ",
+        "Option D: go backwards",
+        "Option E: none of the above"
+
     ]
 def ask_claude_to_decide(criteria):
     """
@@ -22,7 +25,7 @@ def ask_claude_to_decide(criteria):
     return: Claude's decision and reasoning.
     """
     # Construct the prompt
-    prompt = f"""You are an intelligent Robot that can move around ones home and Answer questions and help with automation tasks:
+    prompt = f"""You are a robot that is traveling based off user input. choose the option in which the robot should move
     
     Options:
     {', '.join(options)}
@@ -31,11 +34,8 @@ def ask_claude_to_decide(criteria):
     {criteria}
 
     Please analyze the options based on the criteria and provide:
-    1. Your recommended choice.
-    2. A reasonable comment based on what the user says.
-    3. If changing the enviornment say how to change the enviornment
+    1. the option letter that you choose, just the letter and no other text
 
-    Answer the response in the form: 1 "%", 2 "%", 3"%"
     """
 
     # Send the prompt to Claude

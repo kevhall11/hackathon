@@ -1,9 +1,10 @@
-from operations import ai, STT,TTS
+from operations import ai
 
 def main():
+   # coms = arduino.ArduinoCommunicator(port='COM3',baud_rate= 9600 )
     inp = input("enter speech")
     response = ai.ask_claude_to_decide(inp)
-    TTS.text_to_speech(text=response)
+    print(response)
 
 
 if __name__ == "__main__":
