@@ -2,7 +2,7 @@
 import arduino
 import STT
 import ai
-from uagents import Agent , Context
+from uagents import Agent 
 class Controller: 
     def __init__(self, talker:arduino.ArduinoCommunicator, mode:str= 'A'):
         self.curVal = 'F'
